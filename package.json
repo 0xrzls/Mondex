@@ -1,0 +1,63 @@
+{
+  "name": "modex-dex",
+  "version": "1.0.0",
+  "description": "Decentralized Exchange on Monad",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy": "npx hardhat run scripts/deploy.js --network monad",
+    "node": "npx hardhat node"
+  },
+  "dependencies": {
+    "web3": "^1.7.3",
+    "ethers": "^5.7.2",
+    "dotenv": "^16.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "next": "latest",
+    "@nomiclabs/hardhat-ethers": "^2.0.0",
+    "@nomiclabs/hardhat-waffle": "^2.0.0",
+    "hardhat": "^2.22.0",
+    "react-router-dom": "^6.3.0",
+    "moralis": "^1.11.0",
+    "@walletconnect/web3modal": "^1.9.8",
+    "@tonconnect/sdk": "^1.0.0",
+    "tailwindcss": "^3.2.7",
+    "daisyui": "^3.5.0",
+    "assert": "^2.0.0",
+    "stream-browserify": "^3.0.0",
+    "https-browserify": "^1.0.0",
+    "http-browserify": "^1.7.0",
+    "os-browserify": "^0.3.0",
+    "stream-http": "^3.2.0",
+    "crypto-browserify": "^3.12.0",
+    "buffer": "^6.0.3",
+    "process": "^0.11.10",
+    "util": "^0.12.5"
+  },
+  "devDependencies": {
+    "webpack": "^5.76.3",
+    "webpack-cli": "^5.0.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
