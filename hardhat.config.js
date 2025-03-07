@@ -1,13 +1,12 @@
-require("@nomicfoundation/hardhat-toolbox");
+require("@nomiclabs/hardhat-ethers");
 require("dotenv").config();
 
 module.exports = {
-  solidity: "0.8.0",
+  solidity: "0.8.19", // Pastikan kompatibel dengan kontrak
   networks: {
-    monad: {
-      url: "https://testnet-rpc.monad.xyz"
-      chainId: 10143
-      accounts: [`0x${process.env.PRIVATE_KEY}`]
-    }
-  }
-};
+    monadTestnet: {
+      url: "https://testnet-rpc.monad.network", // Ganti dengan RPC dari chainlist
+      chainId: 10143, // Monad Testnet Chain ID
+      accounts: [`0x${process.env.PRIVATE_KEY}`], // Ambil private key dari .env
+    },
+  },

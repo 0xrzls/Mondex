@@ -4,23 +4,19 @@ async function main() {
   const [deployer] = await hre.ethers.getSigners();
   console.log("Deploying contracts with the account:", deployer.address);
 
-  const currentTimestamp = Math.floor(Date.now() / 1000);
-  const unlockTime = currentTimestamp + 86400; // 1 hari ke depan
+  const tokenA = "0xTokenAAddress"; // Ganti dengan alamat token valid di Monad Testnet
+  const tokenB = "0xTokenBAddress"; // Ganti dengan alamat token valid di Monad Testnet
 
-  console.log(`Unlock time set to: ${unlockTime}`);
+  const SimpleDex = await hre.ethers.getContractFactory("SimpleDex");
+  const dex = await SimpleDex.deploy(tokenA, tokenB);
+  await dex.deployed();
 
-  // Contoh deploy kontrak Uniswap V2 atau kontrak swap yang disesuaikan
-  // Gantilah "Lock" dengan nama kontrak Anda jika berbeda
-  const Contract = await hre.ethers.getContractFactory("Lock");
-  const contract = await Contract.deploy(unlockTime, { value: hre.ethers.utils.parseEther("0.1") });
-
-  await contract.deployed();
-  console.log("Contract deployed to:", contract.address);
+  console.log("SimpleDex deployed to:", dex.address);
 }
 
 main()
   .then(() => process.exit(0))
   .catch((error) => {
-    console.error("Deployment failed:", error);
+    console.error(error);
     process.exit(1);
   });
