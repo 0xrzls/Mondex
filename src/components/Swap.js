@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { ethers } from "ethers";
 
 const Swap = () => {
   const [activeTab, setActiveTab] = useState("swap"); // "swap" atau "liquidity"

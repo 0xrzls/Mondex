@@ -1,18 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import * as Sentry from "@sentry/react";
+import { BrowserTracing } from "@sentry/tracing";
 
-:root {
-  --primary-color: #7B3FE4;
-  --secondary-color: #1A1A2E;
-  --text-color: #FFFFFF;
-  --button-color: #8A4FFF;
-  --hover-color: #6A32D2;
-}
+// Tambahkan konfigurasi Sentry
+Sentry.init({
+  dsn: "https://863ae7a99882734dcd42c21ae8685965@o4508942997979136.ingest.de.sentry.io/4508943006957648",
+  integrations: [new BrowserTracing()],
+  tracesSampleRate: 1.0, // Sesuaikan jika perlu
+});
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: var(--secondary-color);
-  color: var(--text-color);
-}
-
-/* Tambahkan CSS tambahan untuk styling umum */
+ReactDOM.render(<App />, document.getElementById("root"));
